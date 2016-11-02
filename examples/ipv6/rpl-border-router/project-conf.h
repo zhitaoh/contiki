@@ -64,4 +64,8 @@
 #define WEBSERVER_CONF_CFS_CONNS 2
 #endif
 
+// XXX save ROM space by using nullrdc https://github.com/contiki-os/contiki/tree/master/examples/er-rest-example
+#undef NETSTACK_CONF_RDC
+#define NETSTACK_CONF_RDC nullrdc_driver
+
 #endif /* PROJECT_ROUTER_CONF_H_ */

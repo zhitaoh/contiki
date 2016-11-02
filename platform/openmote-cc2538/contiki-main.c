@@ -209,6 +209,9 @@ main(void)
   PRINTF("%s\n", NETSTACK_MAC.name);
   PRINTF("RDC: ");
   PRINTF("%s\n", NETSTACK_RDC.name);
+  PRINTF("Channel: ");
+  PRINTF("%d\n", CC2538_RF_CHANNEL);
+  /* PRINTF("%d\n", NETSTACK_RADIO.get_value(RADIO_PARAM_CHANNEL)); */
 
 #if NETSTACK_CONF_WITH_IPV6
   memcpy(&uip_lladdr.addr, &linkaddr_node_addr, sizeof(uip_lladdr.addr));
