@@ -360,6 +360,7 @@ tx_mode(int new_mode)
 	/* Turn off automatic packet acknowledgment and address decoding. */
 	reg = getreg(CC2420_MDMCTRL0);
 	reg &= ~(AUTOACK | ADR_DECODE);
+	setreg(CC2420_MDMCTRL0, reg);
 	strobe(CC2420_SRXON);
 
 	etimer_set(&et, tx_interval);
