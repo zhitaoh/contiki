@@ -491,7 +491,8 @@ tx_eth(void)
 	uint8_t *buf_ptr = (uint8_t *)buf;
 
 	if(seqno < max_tx_packets) {
-		etimer_set(&et, tx_interval / 2 + random_rand() % tx_interval);
+		/* etimer_set(&et, tx_interval / 2 + random_rand() % tx_interval); */
+		etimer_set(&et, tx_interval);
 
 		/* int i; */
 		/* for(i = 0;i < payload_len;++i) { */
