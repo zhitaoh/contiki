@@ -14,6 +14,19 @@
 #define LAST_MODE JAM
 #define NUM_MODES (LAST_MODE+1)
 
+#define CHANNEL 16
+#define TXPOWER_LEVEL 23
+
+#define TX_INTERVAL (CLOCK_SECOND / 1)
+#define MAX_TX_PACKETS 1000
+#define PAYLOAD_LEN 20
+/* exprimental value used to occupy near full bandwidth, assuming RIMTER_SECOND = 4096 * N */
+/* "SFD gap" = 298 us out of 4395 us Droplet interval => actual free air time = 298 - 160 (preamble+SFD) = 138 us => free bandwidth = 138/4395 = 3.1% */
+/* #define DEFAULT_RTIMER_INTERVAL (RTIMER_SECOND / 128) */
+#define RTIMER_INTERVAL ((RTIMER_SECOND + (225/2)) / 225 )
+#define DST_ADDR0 2
+#define DST_ADDR1 0
+
 extern volatile int jam_ena;
 extern const uint8_t jam_data[6];
 

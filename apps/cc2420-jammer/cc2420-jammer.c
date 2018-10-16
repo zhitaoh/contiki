@@ -70,19 +70,6 @@
     while(!(cond) && RTIMER_CLOCK_LT(RTIMER_NOW(), t0 + (max_time)));   \
   } while(0)
 
-#define CHANNEL 15
-#define TXPOWER_LEVEL 23
-
-#define TX_INTERVAL (CLOCK_SECOND / 1)
-#define MAX_TX_PACKETS 1000
-#define PAYLOAD_LEN 20
-/* exprimental value used to occupy near full bandwidth, assuming RIMTER_SECOND = 4096 * N */
-/* "SFD gap" = 298 us out of 4395 us Droplet interval => actual free air time = 298 - 160 (preamble+SFD) = 138 us => free bandwidth = 138/4395 = 3.1% */
-/* #define DEFAULT_RTIMER_INTERVAL (RTIMER_SECOND / 128) */
-#define RTIMER_INTERVAL ((RTIMER_SECOND + (225/2)) / 225 )
-#define DST_ADDR0 2
-#define DST_ADDR1 0
-
 #define AUTOACK (1 << 4)
 #define ADR_DECODE (1 << 11)
 #define CCAMUX_BV (31<<0)
