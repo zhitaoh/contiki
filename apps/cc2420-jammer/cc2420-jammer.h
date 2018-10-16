@@ -10,8 +10,8 @@
 #define DRIZZLE 6
 #define OFF 7
 #define TX2 8
-#define JAM 9
-#define LAST_MODE JAM
+#define REACT 9
+#define LAST_MODE REACT
 #define NUM_MODES (LAST_MODE+1)
 
 #define CHANNEL 16

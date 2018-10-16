@@ -432,7 +432,7 @@ drizzle_mode(int new_mode)
 
 /* Reactive jamming */
 static void
-jam_mode(int new_mode)
+react_mode(int new_mode)
 {
 	unsigned reg;
 	jam_ena = 0;
@@ -588,7 +588,7 @@ const static struct mode mode_list[] = {
 	{TX2, "TX unicast", tx2_mode, stop_rtimer, NULL, tx2_eth},
 	{DRIZZLE, "Drizzle", drizzle_mode, stop_rtimer, NULL, attack_eth},
 	{DROPLET, "Droplet", droplet_mode, stop_rtimer, NULL, attack_eth},
-	{JAM, "Reactive jamming", jam_mode, NULL, NULL, NULL},
+	{REACT, "Reactive jamming", react_mode, NULL, NULL, NULL},
 	{-1, NULL, NULL, NULL, NULL, NULL}
 };
 
